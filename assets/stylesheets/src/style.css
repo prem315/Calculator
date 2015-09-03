@@ -1,0 +1,24 @@
+body {
+  height: 100vh; }
+
+#calculator {
+  width: 100vmin;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto; }
+  #calculator #result {
+    background-color: red;
+    height: 20.8vmin; }
+  #calculator #preview {
+    background-color: green;
+    height: 11.2vmin; }
+  #calculator #keys .key {
+    background-color: blue;
+    height: 16vmin; }
+  #calculator #operators .operators {
+    background-color: orange;
+    height: 12.8vmin;
+    margin: 0 -15px; }
+
+/*# sourceMappingURL=style.css.map */

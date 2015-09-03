@@ -1,0 +1,39 @@
+$key_height: 16vmin;
+
+body{
+	height: 100vh;
+}
+
+#calculator{
+	//height: 100vmin;
+	width: 100vmin;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	margin: 0 auto;
+	
+	#result{
+		background-color: red;
+		height: 1.3*$key_height;
+	}
+
+	#preview{
+		background-color: green;
+		height: 0.7*$key_height;
+	}
+
+	#keys{
+		.key{
+			background-color: blue;
+			height: $key_height;
+		}
+	}
+
+	#operators{
+		.operators{
+			background-color: orange;
+			height: 0.8*$key_height;
+			margin: 0 -15px;
+		}
+	}
+}
