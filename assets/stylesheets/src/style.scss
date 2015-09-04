@@ -2,6 +2,7 @@ $key_height: 16vmin;
 
 body{
 	height: 100vh;
+	font-family: 'PT Sans', sans-serif;
 }
 
 #calculator{
@@ -13,27 +14,48 @@ body{
 	margin: 0 auto;
 	
 	#result{
-		background-color: red;
+		background-color: #e3e7ea;
 		height: 1.3*$key_height;
+		line-height: 1.3*$key_height;
+		text-align: right;
+		font-size: 14vmin;
+		font-weight: 100;
+		color: #45484d;
 	}
 
 	#preview{
-		background-color: green;
+		background-color: #e3e7ea;
 		height: 0.7*$key_height;
+		line-height: 0.7*$key_height;
+		text-align: right;
+		font-size: 7vmin;
+		font-weight: 100;
+		padding-right: 2vmin;
+		color: #45484d;
 	}
 
 	#keys{
+		text-align: center;
 		.key{
-			background-color: blue;
+			line-height: $key_height;
+			font-size: 8vmin;
+			background-color: #f7f8fa;
 			height: $key_height;
+			color: #989aa5;
+			font-weight: 400;
 		}
 	}
 
 	#operators{
+		text-align: center;
 		.operators{
-			background-color: orange;
+			line-height: 0.8*$key_height;
+			font-size: 8vmin;
+			font-weight: 400;
+			background-color: #fa742d;
 			height: 0.8*$key_height;
 			margin: 0 -15px;
+			color: #fbfaff;
 		}
 	}
 }

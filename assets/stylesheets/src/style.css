@@ -1,5 +1,6 @@
 body {
-  height: 100vh; }
+  height: 100vh;
+  font-family: 'PT Sans', sans-serif; }
 
 #calculator {
   width: 100vmin;
@@ -8,17 +9,40 @@ body {
   transform: translateY(-50%);
   margin: 0 auto; }
   #calculator #result {
-    background-color: red;
-    height: 20.8vmin; }
+    background-color: #e3e7ea;
+    height: 20.8vmin;
+    line-height: 20.8vmin;
+    text-align: right;
+    font-size: 14vmin;
+    font-weight: 100;
+    color: #45484d; }
   #calculator #preview {
-    background-color: green;
-    height: 11.2vmin; }
-  #calculator #keys .key {
-    background-color: blue;
-    height: 16vmin; }
-  #calculator #operators .operators {
-    background-color: orange;
-    height: 12.8vmin;
-    margin: 0 -15px; }
+    background-color: #e3e7ea;
+    height: 11.2vmin;
+    line-height: 11.2vmin;
+    text-align: right;
+    font-size: 7vmin;
+    font-weight: 100;
+    padding-right: 2vmin;
+    color: #45484d; }
+  #calculator #keys {
+    text-align: center; }
+    #calculator #keys .key {
+      line-height: 16vmin;
+      font-size: 8vmin;
+      background-color: #f7f8fa;
+      height: 16vmin;
+      color: #989aa5;
+      font-weight: 400; }
+  #calculator #operators {
+    text-align: center; }
+    #calculator #operators .operators {
+      line-height: 12.8vmin;
+      font-size: 8vmin;
+      font-weight: 400;
+      background-color: #fa742d;
+      height: 12.8vmin;
+      margin: 0 -15px;
+      color: #fbfaff; }
 
 /*# sourceMappingURL=style.css.map */
