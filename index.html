@@ -5,7 +5,10 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/stylesheets/src/style.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="assets/scripts/calci.js"></script>
     <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,700italic' rel='stylesheet' type='text/css'>
+
   </head>
   <body>
     <div id="calculator">
@@ -16,7 +19,6 @@
         
         
       <div id="preview">
-        <p>Preview<p>
       </div>
         
       <div class="container-fluid">
@@ -27,9 +29,9 @@
             <div class="row">
               <div class="container-fluid">
                 <div class="row">
-                  <div class="col-xs-4 key">7</div>
-                  <div class="col-xs-4 key">8</div>
-                  <div class="col-xs-4 key">9</div>
+                  <div class="col-xs-4 key digit " data-digit="8">8</div>
+                  <div class="col-xs-4 key digit " data-digit="9">9</div>
+                  <div class="col-xs-4 key digit " data-digit="7">7</div>
                 </div>
               </div>
             </div>
@@ -37,9 +39,9 @@
             <div class="row">
               <div class="container-fluid">
                 <div class="row">
-                  <div class="col-xs-4 key">4</div>
-                  <div class="col-xs-4 key">5</div>
-                  <div class="col-xs-4 key">6</div>
+                  <div class="col-xs-4 key digit " data-digit="4">4</div>
+                  <div class="col-xs-4 key digit " data-digit="5">5</div>
+                  <div class="col-xs-4 key digit " data-digit="6">6</div>
                 </div>
               </div>
             </div>
@@ -47,19 +49,19 @@
             <div class="row">
               <div class="container-fluid">
                 <div class="row">
-                  <div class="col-xs-4 key">1</div>
-                  <div class="col-xs-4 key">2</div>
-                  <div class="col-xs-4 key">3</div>
-                </div>
+                  <div class="col-xs-4 key digit " data-digit="1">1</div>
+                  <div class="col-xs-4 key digit " data-digit="2">2</div>
+                  <div class="col-xs-4 key digit " data-digit="3">3</div>
+                </div>  
               </div>
             </div>
 
             <div class="row">
               <div class="container-fluid">
                 <div class="row">
-                  <div class="col-xs-4 key">.</div>
-                  <div class="col-xs-4 key">0</div>
-                  <div class="col-xs-4 key">=</div>
+                  <div class="col-xs-4 key" data-digit=".">.</div>
+                  <div class="col-xs-4 key digit" data-digit="0">0</div>
+                  <div class="col-xs-4 key" data-digit="=">=</div>
                 </div>
               </div>
             </div>
@@ -67,7 +69,7 @@
           </div>
           
           <div id="operators" class="col-xs-3">
-            <div class="operators">DEL</div>
+            <div id="delete" class="operators">DEL</div>
             <div class="operators">/</div>
             <div class="operators">X</div>
             <div class="operators">-</div>

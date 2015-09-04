@@ -34,6 +34,10 @@ body {
       height: 16vmin;
       color: #989aa5;
       font-weight: 400; }
+      #calculator #keys .key:hover {
+        background-color: #e7eaf0; }
+      #calculator #keys .key:active {
+        background-color: #d8dde6; }
   #calculator #operators {
     text-align: center; }
     #calculator #operators .operators {
