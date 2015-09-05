@@ -40,7 +40,7 @@ body {
         background-color: #d8dde6; }
   #calculator #operators {
     text-align: center; }
-    #calculator #operators .operators {
+    #calculator #operators .operator {
       line-height: 12.8vmin;
       font-size: 8vmin;
       font-weight: 400;
