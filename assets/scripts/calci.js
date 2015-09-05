@@ -17,5 +17,8 @@ $(document).ready(function(){
 		
 	});
 	
-
+	$('#calculator #delete').dblclick(function(){
+		$('#preview').html('');
+		$('#result').html('');
+	});
 });
