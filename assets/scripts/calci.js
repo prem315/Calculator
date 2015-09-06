@@ -6,7 +6,7 @@ var Calci = {
 			if(this.dataset.keyType == "digit"){
 				Calci.handleInput(this.dataset.digit);
 			} else if(this.dataset.keyType == "operator"){			
-				Calci.handleInput(this.dataset.operator);
+				Calci.handleOperator(this.dataset.operator);
 			} else if(this.dataset.keyType == "delete"){
 				Calci.handleDelete();	
 			} else if(this.dataset.keyType == "equals"){
@@ -18,12 +18,19 @@ var Calci = {
 		$('#calculator #delete').dblclick(function(){
 			//$('#preview').html('');
 			//$('#result').html('');
+			Calci.clearPreview();
 			Calci.clearReasult();
 		});
 
-		['0','1','2','3','4','5','6','7','8','9','/','*','-','+'].forEach(function(digit){
+		['0','1','2','3','4','5','6','7','8','9'].forEach(function(digit){
 			$(document).bind('keyup', digit, function(){
 				Calci.handleInput(digit);
+			});
+		});
+
+		['/','*','-','+'].forEach(function(digit){
+			$(document).bind('keyup', digit, function(){
+				Calci.handleOperator(digit);
 			});
 		});
 
@@ -45,7 +52,7 @@ var Calci = {
 		});
 
 		$(document).bind('keyup', 'shift+=', function(){
-			Calci.handleInput('+');
+			Calci.handleOperator('+');
 		});
 
 		['=','return'].forEach(function(key){
@@ -58,6 +65,21 @@ var Calci = {
 
 	handleInput: function(input){
 		$('#preview').html($('#preview').html()+input);
+	},
+
+	handleOperator: function(operator){
+		if($('#preview').html().length == 0){
+			if(operator == '-'){
+				Calci.handleInput('-');
+			}
+		}else{
+			lastChar = Calci.getLastChar();
+			if(['+','-','*','/'].indexOf(lastChar) != -1){
+				Calci.handleDelete();
+				//Calci.handleInput(operator);
+			}
+			Calci.handleInput(operator);
+		}
 	},
 
 	handleDelete: function(){
@@ -75,6 +97,10 @@ var Calci = {
 		$('#result').html('');
 	},
 
+	clearPreview: function(){
+		$('#preview').html('');
+	},
+
 	getLastNumber: function(){
 		var str = $('#preview').html();
 		var regexp = /[+\-*\/]([0-9.])*$/;
@@ -83,6 +109,15 @@ var Calci = {
 			return str;
 		}else{
 			return matches[0].slice(1);
+		}
+	},
+
+	getLastChar: function(){
+		var str1 = $('#preview').html();
+		if(str1.length == 0){
+			return str1;
+		}else{
+			return str1[str1.length - 1];
 		}
 	}
 }
