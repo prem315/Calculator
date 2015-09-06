@@ -21,10 +21,23 @@ var Calci = {
 			Calci.clearReasult();
 		});
 
-		['0','1','2','3','4','5','6','7','8','9','/','*','-','+','.'].forEach(function(digit){
+		['0','1','2','3','4','5','6','7','8','9','/','*','-','+'].forEach(function(digit){
 			$(document).bind('keyup', digit, function(){
 				Calci.handleInput(digit);
 			});
+		});
+
+		$(document).bind('keyup', '.', function(){
+			lastNumber = Calci.getLastNumber();
+			// check if it has a decimal
+			if(lastNumber.indexOf('.') == -1){
+				if(lastNumber.length == 0){
+					Calci.handleInput(0);
+				}
+				Calci.handleInput('.');
+			}
+			// 	yes: do nothing
+			// 	No: add decimal
 		});
 
 		$(document).bind('keyup', 'backspace', function(){
@@ -60,6 +73,17 @@ var Calci = {
 
 	clearReasult: function(){
 		$('#result').html('');
+	},
+
+	getLastNumber: function(){
+		var str = $('#preview').html();
+		var regexp = /[+\-*\/]([0-9.])*$/;
+		var matches = str.match(regexp);
+		if(matches == null){
+			return str;
+		}else{
+			return matches[0].slice(1);
+		}
 	}
 }
 
