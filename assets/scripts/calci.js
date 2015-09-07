@@ -1,4 +1,5 @@
 (function(){
+	
 	var Calci = {
 
 	init: function(){
@@ -67,7 +68,7 @@
 	handleInput: function(input){
 		$('#preview').html($('#preview').html()+input);
 	},
-
+	/*
 	handleOperator: function(operator){
 		if($('#preview').html().length == 0){
 			if(operator == '-'){
@@ -82,6 +83,32 @@
 			Calci.handleInput(operator);
 		}
 	},
+	*/
+
+	handleOperator: function(operator){
+		if (operator == '-') {
+			if (Calci.checkLastCharIsMinus()) {
+				return;
+			} else {
+				Calci.handleInput('-');
+			}
+		} else {
+			if(Calci.checkLastCharIsOperator()) {
+				Calci.handleDelete();
+			}
+			Calci.handleInput(operator);
+		}
+	},
+
+	checkLastCharIsMinus: function(){
+		return Calci.getLastChar() == '-';
+	},	
+	
+	checkLastCharIsOperator: function(){
+		lastChar = Calci.getLastChar();
+		return (['+','-','*','/'].indexOf(lastChar) != -1);
+	},
+	
 
 	handleDelete: function(){
 		$('#preview').html($('#preview').html().slice(0, -1));
@@ -139,3 +166,6 @@ $(document).ready(function(){
 
 })();
 
+
+// if last operator is one of + / or *
+//  accept - as a new  

@@ -28,6 +28,16 @@ body {
     font-weight: 100;
     padding-right: 2vmin;
     color: #45484d; }
+  #calculator #func {
+    text-align: center;
+    background-color: #e3e7ea;
+    height: 11.2vmin;
+    line-height: 11.2vmin;
+    text-align: center;
+    font-size: 7vmin;
+    font-weight: 100;
+    padding-right: 2vmin;
+    color: #45484d; }
   #calculator #keys {
     text-align: center; }
     #calculator #keys .key {

@@ -43,6 +43,18 @@ body{
 		color: #45484d;
 	}
 
+	#func{
+		text-align: center;
+		background-color: #e3e7ea;
+		height: 0.7*$key_height;
+		line-height: 0.7*$key_height;
+		text-align: center;
+		font-size: 7vmin;
+		font-weight: 100;
+		padding-right: 2vmin;
+		color: #45484d;
+	}
+
 	#keys{
 		text-align: center;
 		.key{
